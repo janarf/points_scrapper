@@ -45,7 +45,7 @@ with st.sidebar:
         # default_names = ['ACER', 'ADCOS', 'Aliexpress','Amazon', 'AMOBELEZA', 'Asics', 'Avon', 'Azul Viagens', 'Basico.com', 'Beleza na web','Booking.com','Buser', 'Café Orfeu', 'CEA', 'Centauro', 'ClickBus']
         default_names = all_names
         names_selected = st.multiselect(
-            "Filtrar por nome (dropdown ou digite)",
+            "Filtrar loja",
             options=all_names,
             default=default_names,
             key='nome_multiselect'
