@@ -60,9 +60,11 @@ def scrape_livelo():
     # --- TRANSFORMAÇÕES ---
     def parse_por_reais(text):
         if text:
-            match = re.search(r"(R\$|U\$)\s*([\d,\.]+)", text)
+            # Remove prefixos "por R$ 1" ou "por "
+            text = re.sub(r"^por\s*(R\$|U\$)?\s*", "", text)
+            match = re.search(r"(R\$|U\$)?\s*([\d,\.]+)", text)
             if match:
-                moeda = match.group(1)
+                moeda = match.group(1) if match.group(1) else "R$"  # Assume R$ se moeda não for especificada
                 valor = match.group(2).replace(',', '.')  # vírgula → ponto
                 return moeda, float(valor)
         return None, None
