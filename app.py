@@ -1,5 +1,5 @@
 import streamlit as st
-from scraper import scrape_livelo
+from scrapper import scrape_livelo
 
 st.set_page_config(page_title="Parceiros Livelo", layout="wide")
 st.title("Tabela de Parceiros Livelo")
