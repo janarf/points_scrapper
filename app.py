@@ -42,7 +42,8 @@ with st.sidebar:
     # Filtro multiselect para nomes
     if 'nome' in df.columns:
         all_names = sorted(df['nome'].dropna().unique())
-        default_names = ['ACER', 'ADCOS', 'Aliexpress','Amazon', 'AMOBELEZA', 'Asics', 'Avon', 'Azul Viagens', 'Basico.com', 'Beleza na web','Booking.com','Buser', 'Café Orfeu', 'CEA', 'Centauro', 'ClickBus']
+        # default_names = ['ACER', 'ADCOS', 'Aliexpress','Amazon', 'AMOBELEZA', 'Asics', 'Avon', 'Azul Viagens', 'Basico.com', 'Beleza na web','Booking.com','Buser', 'Café Orfeu', 'CEA', 'Centauro', 'ClickBus']
+        default_names = all_names
         names_selected = st.multiselect(
             "Filtrar por nome (dropdown ou digite)",
             options=all_names,
